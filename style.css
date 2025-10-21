@@ -1,0 +1,247 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Calibri', Courier, monospace;
+    box-sizing: border-box;
+    --main-green-color: oklch(45.3% 0.124 130.933);
+}
+
+body {
+    background-color: rgb(255, 255, 255);
+    transition: background-color 300ms ease, color 300ms ease; /* transition globale */
+}
+
+p {
+    font-size: 20px;
+    line-height: 1.4;
+}
+h2 {
+    font-size: 28px;
+}
+
+/* nav */
+.nav-header {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: space-around;
+    padding: 16px 40px;
+    border-bottom: 3px solid rgba(50, 204, 36, 0.50);
+    transition: border-color 300ms ease, background-color 300ms ease; /* transition header */
+}
+
+.menu-header {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.greenwave-header {
+    color: #32cc24;
+    font-weight: bold;   
+}
+
+/* logo */
+.logo-header {
+    display: flex;
+    align-items: center;
+    gap: 15px
+}
+.logo-header img {
+    height: 25px;
+}
+
+/* lien en général */
+a, a:visited {
+    text-decoration: none;
+    color: inherit;
+}
+.lien-header-ul:hover {
+    color: #2BB11D;  
+}
+
+/* style bouton au centre header */
+.ul-header {
+    list-style: none;
+    display: flex;
+    gap: 1.5vw;
+    align-items: center;
+    justify-content: center;
+}
+
+/* bouton en haut a droite */
+.bouton-header {
+    display: inline-flex; 
+    gap: 30px;
+    align-items: center; 
+    width: auto; 
+}
+.bouton-header-inscription {
+    border-radius: 5px;
+    background-color: #2BB11D;
+    color : rgb(247, 245, 245);
+    padding: 6px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* centre (sous le header) */
+.txt-centre {
+    text-align: center;
+    font-size: 23px;
+    margin-top: 100px;
+}
+.txt-centre h1 span{
+    color: #2bb11f;
+}
+.txt-centre p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+/* dark / light mode */
+.bouton-header-dark-mode,
+.bouton-header-light-mode {
+    width: 34px;
+    height: 34px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 200ms ease, transform 160ms ease;
+    opacity: 1;
+    cursor: pointer;
+    transform: scale(1);
+}
+
+/* état par défaut : light-mode caché visuellement mais avec place réservée */
+.bouton-header-light-mode {
+    opacity: 0;
+    cursor: pointer;
+    transform: scale(0.95);
+}
+
+/* Thème sombre global */
+body.dark-mode {
+    background-color: #171717;
+    color: #ffffff;
+}
+
+/* liens et éléments en sombre */
+body.dark-mode a, body.dark-mode a:visited {
+    color: #ffffff;
+}
+body.dark-mode .bouton-header-inscription {
+    background-color: var(--main-green-color);
+    color: #ffffff;
+}
+
+/* garde transition sur la ligne (bordure) du header */
+body.dark-mode .nav-header {
+    border-bottom-color: var(--main-green-color);
+}
+
+/* inverse visibilité des icônes via opacity/pointer-events pour animation fluide */
+body.dark-mode .bouton-header-dark-mode {
+    cursor: pointer;
+    transform: scale(0.95);
+}
+body.dark-mode .bouton-header-light-mode {
+    opacity: 1;
+    cursor: pointer;
+    transform: scale(1);
+}
+
+.wave {
+    position: relative;
+    width: 100%;
+}
+
+.vague1 {
+    margin-top: 50px;
+    width: 100%;
+    display: block;
+    position: relative;
+    top: 1px;
+}
+
+/* en dessous pour les pb  */
+.detail-entreprise, .infrastructure, .cloud {
+    margin: 0 auto; /* centre horizontalement */
+    padding: 100px 60px; /* espace intérieur haut/bas + côtés */
+    position: relative;
+    width: 100%;
+    background-color: var(--main-green-color);
+
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 200px; /* espace entre les deux blocs */
+    flex-wrap: wrap; /* pour s’adapter aux petits écrans */
+    box-sizing: border-box; /* pour que le padding soit inclus dans la largeur */
+}
+.infrastructure, .cloud {
+    padding-top: 150px;
+}
+
+span.detail-entreprise {
+    display: inline;
+    font-weight: bold;
+    color: white;
+    background: none;
+    margin: 0;
+    padding: 0;
+}
+
+h2.titre-detail-entreprise {
+    color: white;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.titre1, .titre2, .decal-1 {
+    flex: 1 1 40%; /* prend ~40% de la largeur chacun */
+    min-width: 320px; /* empêche de devenir trop petits */
+    max-width: 500px; /* limite la taille max */
+    padding: 20px;
+    border-radius: 15px;
+
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+
+    color: white;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.decal-1, .decal-2 {
+    flex: 1 1 100%;     /* force retour à la ligne */
+    max-width: 500px;   /* même largeur visuelle que .titre1/.titre2 */
+    min-width: 0;
+    margin: 0 auto;     /* centre horizontalement dans la ligne */
+    position: static;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+/* option responsive : sur très grands écrans garder deux colonnes et decal-1 centré */
+@media (min-width: 1200px) {
+    .decal-1 {
+        flex-basis: 100%;
+    }
+}
+
+.infra-img, .cloud-img {
+    height: 210px;
+    width: 210px;
+}
+
+.decal-1, .decal-2 h2 {
+    font-weight: bold;
+}

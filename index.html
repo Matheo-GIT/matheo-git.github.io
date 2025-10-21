@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenWave Technologies</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="images/logo.webp">
+</head>
+<body>
+    <div class="header">
+        <nav class="nav-header">
+            <!-- Logo -->
+            <div class="logo-header">
+                <img src="images/logo.webp" alt="LOGO" class="logo-header">
+                <span class="greenwave-header">GreenWave</span>
+            </div>
+
+            <!-- Liens de navigation -->
+            <div class="menu-header">
+                <ul class="ul-header">
+                    <li><a href="#" class="lien-header-ul">Cat1</a></li>
+                    <li><a href="#" class="lien-header-ul">Cat2</a></li>
+                    <li><a href="#" class="lien-header-ul">Prix</a></li>
+                </ul>
+            </div>
+            
+
+            <!-- Boutons -->
+            <div class="bouton-header">
+                <a href="#" class="lien-header"><bouton class="bouton-header-connection">Se connecter</bouton></a>
+                <a href="#" class="lien-header"><bouton class="bouton-header-inscription">S’inscrire</bouton></a>
+                <img src="images/dark_mode.webp" alt="Dark Mode" class="bouton-header-dark-mode" id="dark-mode" onclick="toggleDarkMode()">
+                <img src="images/light_mode.webp" alt="Light Mode" class="bouton-header-light-mode" id="light-mode" onclick="toggleLightMode()">
+            </div>
+        </nav>
+    </div>
+
+
+    <div class="txt-centre">
+        <h1><span>GreenWave</span> Technologies</h1>
+        <p>Votre partenaire pour un avenir durable</p>
+        <h2>En savoir plus</h2>
+    </div>
+
+    <div class="wave">
+        <img src="images/vague1.svg" alt="Image de vague décorative" class="vague1">
+    </div>
+
+    <div class="detail-entreprise">
+        <div class="titre1">
+            <h2 class="titre-detail-entreprise">Profil de l'entreprise</h2>
+            <p>
+                <span class="detail-entreprise">GreenWave Technologies</span> est une PME de 50 employés, spécialisée dans le développement de solutions logicielles et 
+                de services informatiques pour divers secteurs (santé, transport, énergie…).<br>
+                Basée dans une grande ville européenne, elle opère principalement en<span class="detail-entreprise"> mode SaaS</span> (Software as a Service), avec des services hébergés sur des<span class="detail-entreprise"> datacenters externalisés</span>.
+            </p>
+        </div>
+
+        <div class="titre2">
+            <h2 class="titre-detail-entreprise">Objectif stratégique : Engagement en faveur du développement durable</h2>
+            <p>
+                L’entreprise souhaite aligner son activité sur les enjeux du développement durable en devenant<span class="detail-entreprise"> un modèle de Green IT</span>.<br>
+                Cette ambition concerne toutes les branches : infrastructure IT, équipements, gestion de projets, communication interne et externe.
+            </p>
+        </div>
+    </div>
+
+
+    <div class="infrastructure">
+        <img class="infra-img" src="images/data-base.svg" alt="Image d'un serveur">
+        <div class="decal-1">
+            <h2>Serveurs internes</h2>
+            <p>
+                6 serveurs physiques hébergeant les bases de données clients critiques. Taux d’utilisation moyen : 45 %.
+                Consommation : 18 kWh/jour, soit environ <span class="detail-entreprise">6 570 kWh/an</span> (22 % de la consommation totale).
+                Aucune virtualisation en place. Système de refroidissement ancien, provoquant une <span class="detail-entreprise">perte énergétique de 30 %</span>.
+            </p>
+        </div>
+    </div>
+
+    <div class="cloud">
+        <div class="decal-2">
+            <h2>Cloud et services externalisés</h2>
+            <p>
+                Utilisation de <span class="detail-entreprise">Microsoft Azure</span> et <span class="detail-entreprise">AWS</span>. 65 % de l’énergie utilisée est renouvelable. 
+                Consommation : <span class="detail-entreprise">10 000 kWh/an</span> (tests, développement, production). Les solutions les plus écologiques des plateformes n’ont pas encore été adoptées.
+            </p>
+        <img class="cloud-img" src="images/cloud.svg" alt="Image de cloud">
+        </div>
+    </div>
+
+
+
+    <script src="javascript.js">
+    </script>
+</body>
+</html>
