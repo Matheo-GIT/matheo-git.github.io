@@ -167,7 +167,7 @@ body.dark-mode .bouton-header-light-mode {
 }
 
 /* en dessous pour les pb  */
-.detail-entreprise, .infrastructure, .cloud {
+.detail-entreprise, .infrastructure, .cloud, .network {
     margin: 0 auto; /* centre horizontalement */
     padding: 100px 60px; /* espace intérieur haut/bas + côtés */
     position: relative;
@@ -177,12 +177,14 @@ body.dark-mode .bouton-header-light-mode {
     display: flex;
     justify-content: center;
     align-items: stretch;
-    gap: 200px; /* espace entre les deux blocs */
+    gap: 200px; /*espace entre les deux blocs */
     flex-wrap: wrap; /* pour s’adapter aux petits écrans */
     box-sizing: border-box; /* pour que le padding soit inclus dans la largeur */
 }
-.infrastructure, .cloud {
+.infrastructure, .cloud, .network {
     padding-top: 150px;
+    display: flex;
+    justify-content: space-evenly;
 }
 
 span.detail-entreprise {
@@ -200,7 +202,7 @@ h2.titre-detail-entreprise {
     margin-bottom: 15px;
 }
 
-.titre1, .titre2, .decal-1 {
+.titre1, .titre2, .decal-1, .decal-2, .decal-3 {
     flex: 1 1 40%; /* prend ~40% de la largeur chacun */
     min-width: 320px; /* empêche de devenir trop petits */
     max-width: 500px; /* limite la taille max */
@@ -217,11 +219,10 @@ h2.titre-detail-entreprise {
     text-align: center;
 }
 
-.decal-1, .decal-2 {
+.decal-1, .decal-2, .decal-3 {
     flex: 1 1 100%;     /* force retour à la ligne */
     max-width: 500px;   /* même largeur visuelle que .titre1/.titre2 */
     min-width: 0;
-    margin: 0 auto;     /* centre horizontalement dans la ligne */
     position: static;
     display: flex;
     flex-direction: column;
@@ -232,16 +233,17 @@ h2.titre-detail-entreprise {
 
 /* option responsive : sur très grands écrans garder deux colonnes et decal-1 centré */
 @media (min-width: 1200px) {
-    .decal-1 {
+    .decal-1, .decal-2, .decal-3 {
         flex-basis: 100%;
     }
 }
 
-.infra-img, .cloud-img {
+.infra-img, .cloud-img, .network-img {
     height: 210px;
     width: 210px;
+    margin-top: 30px;
 }
 
-.decal-1, .decal-2 h2 {
+.decal-1, .decal-2, .decal-3 h2 {
     font-weight: bold;
 }
