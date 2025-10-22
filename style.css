@@ -3,7 +3,8 @@
     padding: 0;
     font-family: 'Calibri', Courier, monospace;
     box-sizing: border-box;
-    --main-green-color: oklch(45.3% 0.124 130.933);
+    --main-green-color: oklch(45.346% 0.12348 130.8);
+    --secondary-color: #5ea500;
 }
 
 body {
@@ -14,6 +15,9 @@ body {
 p {
     font-size: 20px;
     line-height: 1.4;
+}
+h1 {
+    font-size: 2.5em;
 }
 h2 {
     font-size: 28px;
@@ -46,6 +50,14 @@ h2 {
     display: flex;
     align-items: center;
     gap: 15px
+}
+.logo-header p {
+    font-size: 15px;
+    background-color: var(--main-green-color);
+    border-radius: 20px;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 .logo-header img {
     height: 25px;
@@ -152,7 +164,6 @@ body.dark-mode .bouton-header-light-mode {
     cursor: pointer;
     transform: scale(1);
 }
-
 .wave {
     position: relative;
     width: 100%;
@@ -167,9 +178,9 @@ body.dark-mode .bouton-header-light-mode {
 }
 
 /* en dessous pour les pb  */
-.detail-entreprise, .infrastructure, .cloud, .network {
+.detail-entreprise {
     margin: 0 auto; /* centre horizontalement */
-    padding: 100px 60px; /* espace intérieur haut/bas + côtés */
+    padding: 40px 60px; /* espace intérieur haut/bas + côtés */
     position: relative;
     width: 100%;
     background-color: var(--main-green-color);
@@ -177,14 +188,8 @@ body.dark-mode .bouton-header-light-mode {
     display: flex;
     justify-content: center;
     align-items: stretch;
-    gap: 200px; /*espace entre les deux blocs */
     flex-wrap: wrap; /* pour s’adapter aux petits écrans */
     box-sizing: border-box; /* pour que le padding soit inclus dans la largeur */
-}
-.infrastructure, .cloud, .network {
-    padding-top: 150px;
-    display: flex;
-    justify-content: space-evenly;
 }
 
 span.detail-entreprise {
@@ -202,7 +207,7 @@ h2.titre-detail-entreprise {
     margin-bottom: 15px;
 }
 
-.titre1, .titre2, .decal-1, .decal-2, .decal-3 {
+.titre1, .solution {
     flex: 1 1 40%; /* prend ~40% de la largeur chacun */
     min-width: 320px; /* empêche de devenir trop petits */
     max-width: 500px; /* limite la taille max */
@@ -219,31 +224,59 @@ h2.titre-detail-entreprise {
     text-align: center;
 }
 
-.decal-1, .decal-2, .decal-3 {
-    flex: 1 1 100%;     /* force retour à la ligne */
-    max-width: 500px;   /* même largeur visuelle que .titre1/.titre2 */
-    min-width: 0;
-    position: static;
+.svg-path {
+    height: 100%;
+}
+svg {
+    max-height: 100%;
+    width: 100%;
+}
+
+.div-boite {
+    width: 100%;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: space-between; /* espace égal entre les boîtes */
+    align-items: stretch; /* garde la même hauteur */
+    padding: 40px; /* un peu d’air autour si tu veux */
+    box-sizing: border-box;
+}
+
+.solution {
+    flex: 1; /* permet aux 3 boîtes de se répartir l’espace */
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 15px;
+    padding: 30px;
+    color: white;
+    text-align: center;
+    margin: 0 10px; /* petit espace latéral pour éviter qu’elles se collent */
+    backdrop-filter: blur(10px);
+    display: flex;
     align-items: center;
-    gap: 20px;
+    justify-content: center;
+}
+.solution-h1 {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+.nos-solutions {
+    background-color: var(--main-green-color);
 }
 
-/* option responsive : sur très grands écrans garder deux colonnes et decal-1 centré */
-@media (min-width: 1200px) {
-    .decal-1, .decal-2, .decal-3 {
-        flex-basis: 100%;
-    }
-}
 
-.infra-img, .cloud-img, .network-img {
-    height: 210px;
-    width: 210px;
-    margin-top: 30px;
-}
 
-.decal-1, .decal-2, .decal-3 h2 {
-    font-weight: bold;
+
+
+
+
+
+
+
+
+
+footer {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;    
 }
