@@ -177,7 +177,7 @@ body.dark-mode .bouton-header-light-mode {
     top: 1px;
 }
 
-/* en dessous pour les pb  */
+
 .detail-entreprise {
     margin: 0 auto; /* centre horizontalement */
     padding: 20px 60px; /* espace intérieur haut/bas + côtés */
@@ -283,4 +283,130 @@ footer {
     align-items: center;
     text-align: center;
     height: 150px;
+}
+
+
+
+
+/* === Page d'inscription avec form === */
+form.login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 150px); /* s'ajuste selon le footer */
+    padding: 40px 20px;
+    flex-direction: column;
+}
+
+/* boîte du formulaire */
+.login-box {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
+    padding: 40px;
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    color: white;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* champs du formulaire */
+.login-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    text-align: left;
+}
+.login-subtitle {
+    font-size: 14px;
+    padding: 10px 10px;
+}
+
+.span-form {
+    font-weight: bold;
+    color: #32cc24;
+}
+.login-fields p {
+    font-weight: bold;
+    font-size: 14px;
+    color: white;
+}
+
+.login-fields input {
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+    background-color: rgba(255, 255, 255, 0.8);
+    outline: none;
+}
+
+.login-fields input:focus {
+    box-shadow: 0 0 5px #2bb11f;
+}
+
+/* bouton d'inscription */
+.login-btn {
+    width: 100%;
+    margin-top: 10px;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 10px 0;
+    border-radius: 8px;
+    border: none;
+}
+
+.login-btn:hover {
+    cursor: pointer;
+}
+
+/* pied de page du formulaire */
+.login-footer {
+    margin-top: 25px;
+    font-size: 14px;
+}
+
+.login-footer a {
+    color: white;
+    text-decoration: underline;
+}
+
+.footer-sign-up, .footer-sign-in {
+    border-top: 3px solid rgba(50, 204, 36, 0.50);
+}
+
+/* Mode sombre */
+body.dark-mode .login-box {
+    color: #fff;
+}
+
+body.dark-mode .login-fields input {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+body.dark-mode .login-fields input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+body.dark-mode .login-btn {
+    background-color: var(--main-green-color);
+}
+
+/* Mode clair */
+body:not(.dark-mode) .login-box {
+    color: #000;
+    background-color: oklch(86.9% 0.005 56.366);
+}
+
+body:not(.dark-mode) .login-fields p,
+body:not(.dark-mode) .login-fields input {
+    color: #000;
+}
+
+body:not(.dark-mode) a {
+    color: #000;
 }
