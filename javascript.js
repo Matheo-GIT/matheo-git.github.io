@@ -21,14 +21,3 @@ function updateThemeIcons() {
         if (lightBtn) lightBtn.style.display = 'none';
     }
 }
-
-// Appliquer le thème au chargement
-window.onload = () => {
-    const theme = localStorage.getItem('theme');
-    if (theme === 'dark') {
-        document.body.classList.add('dark-mode');
-    } else {
-        document.body.classList.remove('dark-mode');
-    }
-    updateThemeIcons();
-};

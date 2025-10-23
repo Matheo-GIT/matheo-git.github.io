@@ -180,7 +180,7 @@ body.dark-mode .bouton-header-light-mode {
 /* en dessous pour les pb  */
 .detail-entreprise {
     margin: 0 auto; /* centre horizontalement */
-    padding: 40px 60px; /* espace intérieur haut/bas + côtés */
+    padding: 20px 60px; /* espace intérieur haut/bas + côtés */
     position: relative;
     width: 100%;
     background-color: var(--main-green-color);
@@ -205,6 +205,8 @@ h2.titre-detail-entreprise {
     color: white;
     text-align: center;
     margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
 }
 
 .titre1, .solution {
@@ -224,59 +226,70 @@ h2.titre-detail-entreprise {
     text-align: center;
 }
 
-.svg-path {
-    height: 100%;
-}
-svg {
-    max-height: 100%;
-    width: 100%;
-}
-
-.div-boite {
+.div-boite, .engagement {
     width: 100%;
     display: flex;
-    justify-content: space-between; /* espace égal entre les boîtes */
-    align-items: stretch; /* garde la même hauteur */
-    padding: 40px; /* un peu d’air autour si tu veux */
+    justify-content: space-around;
+    align-items: stretch;
+    padding: 40px;
     box-sizing: border-box;
+    gap: 15px; /* ajoute un espacement entre les solutions */
+    flex-wrap: wrap; /* permet le passage en colonne sur mobile */
+    background-color: var(--main-green-color);
+    padding-top: 100px;
 }
 
-.solution {
-    flex: 1; /* permet aux 3 boîtes de se répartir l’espace */
-    background-color: rgba(255, 255, 255, 0.15);
-    border-radius: 15px;
-    padding: 30px;
-    color: white;
-    text-align: center;
-    margin: 0 10px; /* petit espace latéral pour éviter qu’elles se collent */
-    backdrop-filter: blur(10px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.solution h2 {
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
 }
-.solution-h1 {
-    display: flex;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
+
+/* Responsive sur petits écrans */
+@media screen and (max-width: 768px) {
+    .div-boite {
+        padding: 20px;
+        flex-direction: column;
+    }
+    
+    .solution {
+        flex: 1 1 100%;
+        margin: 10px 0;
+        min-width: 0;
+    }
+    
+    .solution h2 {
+        font-size: 24px;
+        padding-bottom: 10px;
+    }
+    
+    p {
+        font-size: 16px;
+    }
+    
 }
 .nos-solutions {
     background-color: var(--main-green-color);
 }
+.solution-h1 {
+    text-align: center;
+    color: white;
+    padding-top: 100px;
+}
 
 
-
-
-
-
-
-
-
-
-
+img {
+    opacity: 0; /* Rend l'image invisible par défaut */
+    transition: opacity 0.5s ease; /* Transition pour l'effet de fondu */
+}
+img[loading="lazy"].loaded {
+    opacity: 1; /* Rend l'image visible une fois chargée */
+}
 
 footer {
     display: flex;
     justify-content: space-evenly;
-    align-items: center;    
+    align-items: center;
+    text-align: center;
+    height: 150px;
 }
