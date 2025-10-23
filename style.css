@@ -277,15 +277,6 @@ h2.titre-detail-entreprise {
     padding-top: 100px;
 }
 
-
-img {
-    opacity: 0; /* Rend l'image invisible par défaut */
-    transition: opacity 0.5s ease; /* Transition pour l'effet de fondu */
-}
-img[loading="lazy"].loaded {
-    opacity: 1; /* Rend l'image visible une fois chargée */
-}
-
 footer {
     display: flex;
     justify-content: space-evenly;
