@@ -1,0 +1,412 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Calibri', Courier, monospace;
+    box-sizing: border-box;
+    --main-green-color: oklch(45.346% 0.12348 130.8);
+    --secondary-color: #5ea500;
+}
+
+body {
+    background-color: rgb(255, 255, 255);
+    transition: background-color 300ms ease, color 300ms ease; /* transition globale */
+}
+
+p {
+    font-size: 20px;
+    line-height: 1.4;
+}
+h1 {
+    font-size: 2.5em;
+}
+h2 {
+    font-size: 28px;
+}
+
+/* nav */
+.nav-header {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: space-around;
+    padding: 16px 40px;
+    border-bottom: 3px solid rgba(50, 204, 36, 0.50);
+    transition: border-color 300ms ease, background-color 300ms ease; /* transition header */
+}
+
+.menu-header {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.greenwave-header {
+    color: #32cc24;
+    font-weight: bold;   
+}
+
+/* logo */
+.logo-header {
+    display: flex;
+    align-items: center;
+    gap: 15px
+}
+.logo-header p {
+    font-size: 15px;
+    background-color: var(--main-green-color);
+    border-radius: 20px;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.logo-header img {
+    height: 25px;
+}
+
+/* lien en général */
+a, a:visited {
+    text-decoration: none;
+    color: inherit;
+}
+.lien-header-ul:hover {
+    color: #2BB11D;  
+}
+
+/* style bouton au centre header */
+.ul-header {
+    list-style: none;
+    display: flex;
+    gap: 1.5vw;
+    align-items: center;
+    justify-content: center;
+}
+
+/* bouton en haut a droite */
+.bouton-header {
+    display: inline-flex; 
+    gap: 30px;
+    align-items: center; 
+    width: auto; 
+}
+.bouton-header-inscription {
+    border-radius: 5px;
+    background-color: #2BB11D;
+    color : rgb(247, 245, 245);
+    padding: 6px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* centre (sous le header) */
+.txt-centre {
+    text-align: center;
+    font-size: 23px;
+    margin-top: 100px;
+}
+.txt-centre h1 span{
+    color: #2bb11f;
+}
+.txt-centre p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+/* dark / light mode */
+.bouton-header-dark-mode,
+.bouton-header-light-mode {
+    width: 34px;
+    height: 34px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 200ms ease, transform 160ms ease;
+    opacity: 1;
+    cursor: pointer;
+    transform: scale(1);
+}
+
+/* état par défaut : light-mode caché visuellement mais avec place réservée */
+.bouton-header-light-mode {
+    opacity: 0;
+    cursor: pointer;
+    transform: scale(0.95);
+}
+
+/* Thème sombre global */
+body.dark-mode {
+    background-color: #171717;
+    color: #ffffff;
+}
+
+/* liens et éléments en sombre */
+body.dark-mode a, body.dark-mode a:visited {
+    color: #ffffff;
+}
+body.dark-mode .bouton-header-inscription {
+    background-color: var(--main-green-color);
+    color: #ffffff;
+}
+
+/* garde transition sur la ligne (bordure) du header */
+body.dark-mode .nav-header {
+    border-bottom-color: var(--main-green-color);
+}
+
+/* inverse visibilité des icônes via opacity/pointer-events pour animation fluide */
+body.dark-mode .bouton-header-dark-mode {
+    cursor: pointer;
+    transform: scale(0.95);
+}
+body.dark-mode .bouton-header-light-mode {
+    opacity: 1;
+    cursor: pointer;
+    transform: scale(1);
+}
+.wave {
+    position: relative;
+    width: 100%;
+}
+
+.vague1 {
+    margin-top: 50px;
+    width: 100%;
+    display: block;
+    position: relative;
+    top: 1px;
+}
+
+
+.detail-entreprise {
+    margin: 0 auto; /* centre horizontalement */
+    padding: 20px 60px; /* espace intérieur haut/bas + côtés */
+    position: relative;
+    width: 100%;
+    background-color: var(--main-green-color);
+
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap; /* pour s’adapter aux petits écrans */
+    box-sizing: border-box; /* pour que le padding soit inclus dans la largeur */
+}
+
+span.detail-entreprise {
+    display: inline;
+    font-weight: bold;
+    color: white;
+    background: none;
+    margin: 0;
+    padding: 0;
+}
+
+h2.titre-detail-entreprise {
+    color: white;
+    text-align: center;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.titre1, .solution {
+    flex: 1 1 40%; /* prend ~40% de la largeur chacun */
+    min-width: 320px; /* empêche de devenir trop petits */
+    max-width: 500px; /* limite la taille max */
+    padding: 20px;
+    border-radius: 15px;
+
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+
+    color: white;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.div-boite, .engagement {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+    padding: 40px;
+    box-sizing: border-box;
+    gap: 15px; /* ajoute un espacement entre les solutions */
+    flex-wrap: wrap; /* permet le passage en colonne sur mobile */
+    background-color: var(--main-green-color);
+    padding-top: 100px;
+}
+
+.solution h2 {
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Responsive sur petits écrans */
+@media screen and (max-width: 768px) {
+    .div-boite {
+        padding: 20px;
+        flex-direction: column;
+    }
+    
+    .solution {
+        flex: 1 1 100%;
+        margin: 10px 0;
+        min-width: 0;
+    }
+    
+    .solution h2 {
+        font-size: 24px;
+        padding-bottom: 10px;
+    }
+    
+    p {
+        font-size: 16px;
+    }
+    
+}
+.nos-solutions {
+    background-color: var(--main-green-color);
+}
+.solution-h1 {
+    text-align: center;
+    color: white;
+    padding-top: 100px;
+}
+
+footer {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    height: 150px;
+}
+
+
+
+
+/* === Page d'inscription avec form === */
+form.login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 150px); /* s'ajuste selon le footer */
+    padding: 40px 20px;
+    flex-direction: column;
+}
+
+/* boîte du formulaire */
+.login-box {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
+    padding: 40px;
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    color: white;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* champs du formulaire */
+.login-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    text-align: left;
+}
+.login-subtitle {
+    font-size: 14px;
+    padding: 10px 10px;
+}
+
+.span-form {
+    font-weight: bold;
+    color: #32cc24;
+}
+.login-fields p {
+    font-weight: bold;
+    font-size: 14px;
+    color: white;
+}
+
+.login-fields input {
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+    background-color: rgba(255, 255, 255, 0.8);
+    outline: none;
+}
+
+.login-fields input:focus {
+    box-shadow: 0 0 5px #2bb11f;
+}
+
+/* bouton d'inscription */
+.login-btn {
+    width: 100%;
+    margin-top: 10px;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 10px 0;
+    border-radius: 8px;
+    border: none;
+}
+
+.login-btn:hover {
+    cursor: pointer;
+}
+
+/* pied de page du formulaire */
+.login-footer {
+    margin-top: 25px;
+    font-size: 14px;
+}
+
+.login-footer a {
+    color: white;
+    text-decoration: underline;
+}
+
+.footer-sign-up, .footer-sign-in {
+    border-top: 3px solid rgba(50, 204, 36, 0.50);
+}
+
+/* Mode sombre */
+body.dark-mode .login-box {
+    color: #fff;
+}
+
+body.dark-mode .login-fields input {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+body.dark-mode .login-fields input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+body.dark-mode .login-btn {
+    background-color: var(--main-green-color);
+}
+
+/* Mode clair */
+body:not(.dark-mode) .login-box {
+    color: #000;
+    background-color: oklch(86.9% 0.005 56.366);
+}
+
+body:not(.dark-mode) .login-fields p,
+body:not(.dark-mode) .login-fields input {
+    color: #000;
+}
+
+body:not(.dark-mode) a {
+    color: #000;
+}

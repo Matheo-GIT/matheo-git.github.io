@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inscription — GreenWave</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="images/logo.webp">
+</head>
+<body>
+  <!-- Header -->
+  <nav class="nav-header">
+    <div class="logo-header">
+      <img src="images/logo.webp" alt="LOGO" class="logo-header">
+      <span class="greenwave-header">GreenWave</span>
+      <p>Design Made by Mathéo</p>
+    </div>
+
+    <div class="bouton-header">
+      <a href="index.html" class="lien-header"><bouton>Accueil</bouton></a>
+      <a href="connexion.html" class="lien-header"><bouton class="bouton-header-inscription">Connexion</bouton></a>
+      <img src="images/dark_mode.webp" alt="Dark Mode" class="bouton-header-dark-mode" id="dark-mode" onclick="toggleDarkMode()">
+      <img src="images/light_mode.webp" alt="Light Mode" class="bouton-header-light-mode" id="light-mode" onclick="toggleLightMode()">
+    </div>
+  </nav>
+
+  <!-- Formulaire principal -->
+  <form class="login-page">
+    <div class="login-box">
+      <h1>Inscription</h1>
+      <p class="login-subtitle">Création de votre espace <span class="span-form">GreenWave</span></p>
+
+      <div class="login-fields">
+        <p>Adresse e-mail</p>
+        <input type="email" id="email" placeholder="exemple@mail.com" required>
+
+        <p>Mot de passe</p>
+        <input type="password" id="password" placeholder="********" required>
+
+        <p>Confirmation du mot de passe</p>
+        <input type="password" id="confirm-password" placeholder="********" required>
+      </div>
+
+      <button type="submit" class="bouton-header-inscription login-btn">S'inscrire</button>
+
+      <p class="login-footer">
+        Déjà membre ? <a href="connexion.html">Connexion</a>
+      </p>
+    </div>
+  </form>
+
+  <!-- Footer -->
+  <footer class="footer-sign-up">
+    <p>
+      © 2025 GreenWave Technologies. Tous droits réservés. <br>Engagés pour un numérique responsable.
+    </p>
+  </footer>
+
+  <script src="javascript.js"></script>
+</body>
+</html>
